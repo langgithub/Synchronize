@@ -1,5 +1,6 @@
 package com.lang.description;
 
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.SynchronousQueue;
 
@@ -13,7 +14,8 @@ public class Test2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		final SynchronousQueue<String> queue=new SynchronousQueue<String>();
+		//final SynchronousQueue<String> queue=new SynchronousQueue<String>();
+		final ArrayBlockingQueue<String> queue=new ArrayBlockingQueue<String>(1);
 		final Semaphore semaphore=new Semaphore(1);
 		for (int i = 0; i < 10; i++) {
 			new Thread(new Runnable() {
